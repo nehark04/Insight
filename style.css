@@ -1,0 +1,193 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-y: scroll;
+  font-family: Poppins;
+}
+
+.navbar {
+  height: 80px;
+  width: 100%;
+  background: white;
+  z-index: 1;
+  position: fixed;
+}
+
+li:hover a:hover {
+color:#e74c3c;
+}
+
+.logo {
+  position: relative;
+  width: 200px;
+  height: auto;
+  bottom: 60px;
+  left: 2%;
+}
+
+.navbar ul {
+  float: right;
+  margin-right: 20px;
+}
+
+.navbar ul li{
+  list-style: none;
+  margin: 0 8px;
+  display: inline-block;
+  line-height: 80px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 6px 13px;
+  font-family: Poppins, sans-serif;
+}
+
+.getStartedButton {
+  left: 100px;
+  font-size: 18px;
+  color: white;
+  background-color: navy;
+  text-decoration: nongte;
+  border: 3px solid rgb(7, 151, 197);
+  padding: 10px 10px 10px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  font-family: Poppins, sans-serif;
+}
+
+.getStartedButton:hover {
+  background: black;
+}
+
+/* -- Main Page Related */
+
+.homeimage {
+  background-color: navy; 
+  height: 755px;
+}
+
+.navytext{
+padding-top: 30px; 
+}
+
+.left-box {
+  font-size: 75px;
+  position: absolute;
+  top: 350px;
+  left: 400px;
+  transform: translate(-50%, -50%);
+  font-family: Oswald;
+  color: rgb(251, 188, 86);  
+}
+
+.homeimagetext{
+  font-family: Poppins;
+  font-size: 20px;
+  color: white; 
+  position: absolute;
+  top: 505px;
+  left: 405px;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.learnmore{ 
+  position: absolute;
+  top: 560px;
+  left: 150px; 
+  padding: 10px;
+  font-size: 20px;
+  color:white;
+  background-color: navy;
+  text-decoration: none;
+  border: 3px solid rgb(7, 151, 197);
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  font-family: Poppins; 
+  outline: none;
+}
+
+.learnmore:hover {
+  background: black;
+}
+
+.picture {
+  position: absolute; 
+  left: 760px;
+  top: 160px;
+}
+
+/* --ABOUT PAGE/SECTION RELATED -- */
+.onpoint {
+  min-height: 85vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #89CFF0;
+  padding-top: 55px;
+  font-family: Poppins;
+}
+
+.about-section {
+  background: url("Images/bluemasks.jpg") no-repeat left;
+  background-size: 55%;
+  background-color: #89CFF0;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-container {
+  width: 45%;
+  height: 200px;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 100px;
+  
+  }
+
+ .inner-container p{
+  position: relative;
+  bottom: 10%;
+ }
+
+.inner-container h1 {
+  bottom: 20%;
+  font-size: 30px;
+  position: relative;
+}
+
+.text {
+  font-size: 13px;
+  color: black;
+  line-height: 30px;
+  text-align: justify;
+}
+
+
+
+/* SCROLL TO TOP BUTTON -- */
+
+#topBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 22px;
+  width: 60px;
+  height: 60px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}

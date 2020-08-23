@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Covid Datas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="stats.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          fetchData("https://corona.lmao.ninja/v2/countries/USA");
+
+          $("select.country").change(function(){
+              var selectedCountry = $(this).children("option:selected").val();
+              fetchData(selectedCountry);
+          });
+      });
+
+
+      function fetchData(cntryUrl) {
+
+        fetch(cntryUrl)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          document.getElementById("country").innerHTML = data.country;
+          document.getElementById("active").innerHTML = data.active.toLocaleString();
+          document.getElementById("cases").innerHTML = data.cases.toLocaleString();
+          document.getElementById("critical").innerHTML = data.critical.toLocaleString();
+          document.getElementById("death").innerHTML = data.deaths.toLocaleString();
+          document.getElementById("recovered").innerHTML = data.recovered.toLocaleString();
+          document.getElementById("tests").innerHTML = data.tests.toLocaleString();
+          document.getElementById("flag").src = data.countryInfo.flag;
+        });
+
+      };
+    </script>
+
+  </head>
+  <body>
+    <nav class="navbar">
+        <a href="index.html">
+          <img class="logo" src="Images/logo.png"/>
+        </a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="map.html">Covid Map</a></li>
+          <li><a href="stats.html">Covid Stats</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="survey.html">Quiz</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="signup.html"><button class="getStartedButton">Get Started</button></a></li>
+        </ul>
+    </nav>
+    
+    <br/><br/><br/><br/><br/>
+    <div class="container">
+      <div style="text-align: right">
+        <span class="country">Choose Country:<span>&nbsp;&nbsp;
+        <select id="countrydropdown" name="country" class="country">
+          <option value="https://corona.lmao.ninja/v2/countries/USA">USA</option> 
+          <option value="https://corona.lmao.ninja/v2/countries/Australia">Australia</option>
+          <option value="https://corona.lmao.ninja/v2/countries/Brazil">Brazil</option> 
+          <option value="https://corona.lmao.ninja/v2/countries/China">China</option>
+          <option value="https://corona.lmao.ninja/v2/countries/Germany">Germany</option>
+          <option value="https://corona.lmao.ninja/v2/countries/India">India</option> 
+          <option value="https://corona.lmao.ninja/v2/countries/Italy">Italy</option> 
+          <option value="https://corona.lmao.ninja/v2/countries/Russia">Russia</option> 
+          <option value="https://corona.lmao.ninja/v2/countries/South Africa">South Africa</option>   
+        </select>
+      </div>
+             
+      <br/>
+      <h2>COVID-19 Cases in <span id="country"></span> <img src="" id="flag"></h2>
+
+      <div class="board">
+        <div class="card a"><i class="fa fa-tachometer"></i><h5>Active Cases</h5><span id="active"></span></div>
+        <div class="card ca"><i class="fa fa-th-list"></i><h5>Total Cases</h5><span id="cases"></span></div>
+        <div class="card cr"><i class="fa fa-times-circle"></i><h5>Critical Cases</h5><span id="critical"></span></div>
+        <div class="card d"><i class="fa fa-times"></i><h5>Total Deaths</h5><span id="death"></span></div>
+        <div class="card r"><i class="fa fa-check-square-o"></i><h5>Recovered Cases</h5><span id="recovered"></span></div>
+        <div class="card t"><i class="fa fa-eye"></i><h5>Total Tests Done</h5><span id="tests"></span></div>
+      </div>
+    </div>
+  </body>
+</html>

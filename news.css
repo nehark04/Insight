@@ -1,0 +1,59 @@
+.pageheading{
+  background-image: url("Images/news3.jpg");
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  background-position: center center;
+  font-size: 35px;
+  border: 1px solid white;
+}
+
+
+.accordion {
+  background-color: lightblue;
+  color: black;
+  cursor: pointer;
+  padding: 8px;
+  width: 95%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.4s;
+  font-family: Oswald;
+  font-weight: lighter;
+  height: 70px;
+  margin: 5px 0 0 35px;
+}
+
+.active, .accordion:hover {
+  background-color: navy;
+  color: white;
+}
+
+.panel {
+  padding: 0 15px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.positionCenterHeader {
+  font-family: Oswald;
+  padding-left: 25px;
+  text-align: center;
+  position: relative;
+  top: 60px;
+  left: -10px;
+  color: black;
+}
+
+.articles{
+  border: 5px solid white;
+  border-radius: 10px;
+  background: white;
+  margin: -50px 30px 20px 30px;
+  box-shadow: 1px 3px 5px 3px #888888;
+  padding: 20px 0 20px 0;
+}
+

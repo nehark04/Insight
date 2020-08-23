@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Insight</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="survey.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
+    <script>
+      function calRiskFactor() {
+        
+        var q1 = document.getElementsByName("q1");
+        var q2 = document.getElementsByName("q2");
+        var q3 = document.getElementsByName("q3");
+        var q4 = document.getElementsByName("q4");
+        var q5 = document.getElementsByName("q5");
+        
+        var q1Val,q2Val,q3Val,q4Val,q5Val,qValTotal;
+
+        for(i = 0; i < q1.length; i++) {           
+          if(q1[i].checked) {            
+            q1Val = q1[i].value;
+          }
+
+          if(q2[i].checked) {            
+            q2Val = q2[i].value;
+          }
+
+          if(q3[i].checked) {            
+            q3Val = q3[i].value;
+          }
+
+          if(q4[i].checked) {            
+            q4Val = q4[i].value;
+          }
+
+          if(q5[i].checked) {            
+            q5Val = q5[i].value;
+          }
+        } 
+
+        if (q5Val && q4Val && q3Val && q2Val && q1Val)
+        {
+          qValTotal = Number(q1Val) + Number(q2Val) + Number(q3Val) + Number(q4Val) + Number(q5Val)
+          //alert("Your RISK FACTOR is " + ((qValTotal/5) * 100) + "%.");
+          document.getElementById("divRFactor").innerHTML = "Your RISK FACTOR is " + ((qValTotal/5) * 100) + "%.";
+          document.getElementById("divRFactor").className = "riskMessageText";
+          
+        }
+        else {
+          alert("Please Answer ALL the Questions. Thank you!")
+        }
+        
+
+      }
+    </script>
+
+
+  </head>
+  <body>
+      <nav class="navbar">
+        <a href="index.html">
+          <img class="logo" src="Images/logo.png"/>
+        </a>
+        <ul>
+          <li><a  href="index.html">Home</a></li>
+          <li><a href="map.html">Covid Map</a></li>
+          <li><a href="stats.html">Covid Stats</a></li>
+           <li><a href="news.html">News</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="survey.html">Quiz</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="signup.html"><button class="getStartedButton">Get Started</button></a></li>
+        </ul>
+      </nav>
+
+    <div class="workplace">
+      <h1>How Likely are You to Get Covid-19?</h1>
+      <p class="subtext">Test yourself by taking our quiz!</p> 
+    </div>
+
+    <div class="quiz">
+    <p class="questions">1. Have you been practicing social distancing?</p><br>
+    <label class="container">All the time
+      <input type="radio" name="q1" value="0">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">None of the time
+      <input type="radio" name="q1" value="1">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Sometimes
+      <input type="radio" name="q1" value="0.5">
+      <span class="checkmark"></span>
+    </label>
+    
+    <br>
+
+    <p class="questions">2. Have you been washing your hands often?</p><br>
+    <label class="container">Yes
+      <input type="radio" name="q2" value="0">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">No
+      <input type="radio" name="q2" value="1">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Sometimes
+      <input type="radio" name="q2"  value="0.5">
+      <span class="checkmark"></span>
+    </label>
+
+    <br>
+
+    <p class="questions">3. Are the people you live with also taking steps to reduce risks?</p><br>
+    <label class="container">Yes
+      <input type="radio" name="q3" value="0">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">No
+      <input type="radio" name="q3" value="1">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Sometimes
+      <input type="radio" name="q3" value="0.5">
+      <span class="checkmark"></span>
+    </label>
+
+    <br>
+
+      <p class="questions">4. Have you experienced any symptoms of COVID-19?</p><br>
+    <label class="container">Yes
+      <input type="radio" name="q4" value="1">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">No
+      <input type="radio" name="q4" value="0">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Sometimes
+      <input type="radio" name="q4" value="0.5">
+      <span class="checkmark"></span>
+    </label>
+
+    <br>
+
+    <p class="questions">5. Do you have any health conditions that could possibly put you at higher risk for the virus?</p><br>
+    <label class="container">Yes
+      <input type="radio" name="q5" value="1">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">No
+      <input type="radio" name="q5" value="0">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Sometimes
+      <input type="radio" name="q5" value="0.5">
+      <span class="checkmark"></span>
+    </label>
+
+    <br/>
+     <div id="divRFactor"> </div>
+     <br/><br/>
+    <button class="button" type="button" value="submit" onclick="javascript: calRiskFactor();">Submit</button>
+  </div>
+
+  </body>
+</html>
